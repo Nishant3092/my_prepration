@@ -53,6 +53,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> findAllUsers() {
         List<User> users = userRepository.findAll();
+        System.out.println("Getting Values from DB "+users);
         return users.stream().map((user) -> convertEntityToDto(user))
                 .collect(Collectors.toList());
     }
